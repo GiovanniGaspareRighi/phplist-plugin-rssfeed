@@ -390,11 +390,11 @@ END;
         } catch (PicoFeed\PicoFeedException $e) {
             return "Failed to fetch URL $feedUrl " . $e->getMessage();
         }
-
+/* to sent message even if [RSS] is only in template
         if (stripos($messageData['message'], '[RSS]') === false) {
             return 'Must have [RSS] placeholder in an RSS message';
         }
-
+*/
         if (!USE_REPETITION) {
             return 'Campaign repetition must be enabled in config.php';
         }
